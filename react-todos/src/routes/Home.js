@@ -32,6 +32,7 @@ function Home(props) {
             </Form>
         </div>
     );
+    
 }
 
 export default Home;
