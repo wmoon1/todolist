@@ -1,0 +1,25 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "The best way to do lists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmoon1/todolist.git"
+  },
+  "author": "Wooram Moon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmoon1/todolist/issues"
+  },
+  "homepage": "https://github.com/wmoon1/todolist#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pug": "^3.0.2"
+  }
+}

@@ -1,0 +1,15 @@
+html 
+    head 
+        meta(charset='utf-8')
+        title= 'To Do List - node.js ver'
+    body 
+        h1= toDoListTitle 
+        form(action='/add_list' method='post')
+            p 
+                label(for='content') To do List :
+                input(type='text' name='content')
+                input(type='submit' value='add')
+            p 
+                ul 
+                    each val in toDoLists 
+                        li= val
