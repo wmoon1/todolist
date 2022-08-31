@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function TodoListItem({todo}) {
+function TodoListItem({props}) {
     const [value, setValue] = useState;
-    const {id, text, checked } = todo;
+
     return (
         <div>
-            
+            <h1>{props.text}</h1>
         </div>
     );
 }

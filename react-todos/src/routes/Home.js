@@ -1,22 +1,34 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function Home(props) {
-    const [todos, setTodos] = useState({ name: ''})
-    const [showLoading, setShowLoading] = useState(false);
-    const saveTodos = (e) => {
-        setShowLoading(true);
-        e.preventDefault();
-        const data = {name: todos.name}
-    }
+    const [todos, setTodos] = useState([])
+    const inputName = useRef(1);
     const onChange = (e) => {
-        e.persist();
-        setTodos({...todos, [e.target.name]: e.target.value});
+        setTodos(e.target.name);
     }
-    
+    const onDel = (id) => {
+        setTodos(todos.filter(todos => todos.id !== id))
+    }
+
+    const onToggle = (id) => {
+        setTodos(todos.map(item=> item.id ===id? {...item, check: !item.check}: item))
+    }
+
+    const onAdd = (text) => {
+        setTodos([
+            ...todos,
+            {
+                id: inputName.current++,
+                text,
+                check: false
+            }
+        ])
+    }
+
     return(
         <div>
             <h1>Todays to do</h1>
